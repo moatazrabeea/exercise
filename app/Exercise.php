@@ -3,7 +3,7 @@
 
 namespace App;
 
-use App\Customer;
+use App\controller\Customer;
 
 
 class Exercise

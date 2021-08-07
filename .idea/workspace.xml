@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="163384d1-7f5f-49a6-a535-0fa6f79648e5" name="Default Changelist" comment="" />
+    <list default="true" id="163384d1-7f5f-49a6-a535-0fa6f79648e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/View/common/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controller/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Customer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exercise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exercise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Customers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,12 +24,16 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1wHGkh6X2dWGyJkbUXCBdSjmdRM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,8 +42,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/moataz/ITI/WEZZA/carent-master" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/controller" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -39,7 +63,11 @@
       <workItem from="1628108247046" duration="1082000" />
       <workItem from="1628109914765" duration="4269000" />
       <workItem from="1628114718622" duration="4465000" />
-      <workItem from="1628154302732" duration="682000" />
+      <workItem from="1628154302732" duration="9827000" />
+      <workItem from="1628170008038" duration="7895000" />
+      <workItem from="1628249371469" duration="1763000" />
+      <workItem from="1628257149427" duration="3220000" />
+      <workItem from="1628296651731" duration="4299000" />
     </task>
     <servers />
   </component>

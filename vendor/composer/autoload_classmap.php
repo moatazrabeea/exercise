@@ -7,6 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Config' => $baseDir . '/app/Config.php',
+    'App\\Customer' => $baseDir . '/app/Customer.php',
+    'App\\Exercise' => $baseDir . '/app/Exercise.php',
     'App\\SQLiteConnection' => $baseDir . '/app/SQLiteConnection.php',
+    'App\\lib\\Controller' => $baseDir . '/app/lib/Controller.php',
+    'App\\model\\Customers' => $baseDir . '/app/model/Customers.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

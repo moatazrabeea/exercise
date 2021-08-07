@@ -19,6 +19,7 @@ class Customers
         {
             return false .$e->getMessage();
         }
+        
         $result = $statement->fetchAll();
         return $result;
     }

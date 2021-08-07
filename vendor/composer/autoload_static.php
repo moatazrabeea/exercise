@@ -22,7 +22,11 @@ class ComposerStaticInitc560e8db3780a136a4b84c6287180f9e
 
     public static $classMap = array (
         'App\\Config' => __DIR__ . '/../..' . '/app/Config.php',
+        'App\\Customer' => __DIR__ . '/../..' . '/app/Customer.php',
+        'App\\Exercise' => __DIR__ . '/../..' . '/app/Exercise.php',
         'App\\SQLiteConnection' => __DIR__ . '/../..' . '/app/SQLiteConnection.php',
+        'App\\lib\\Controller' => __DIR__ . '/../..' . '/app/lib/Controller.php',
+        'App\\model\\Customers' => __DIR__ . '/../..' . '/app/model/Customers.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
