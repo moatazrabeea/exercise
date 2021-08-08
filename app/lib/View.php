@@ -31,11 +31,11 @@ public function assign($variable, $value)
     $this->data[$variable] = $value;
 }
 
-public function __destruct()
-{
-    extract($this->data);
-    include($this->render);
+    public function __destruct()
+    {
+        extract($this->data);
+        include($this->render);
 
-}
+    }
 }
 ?>

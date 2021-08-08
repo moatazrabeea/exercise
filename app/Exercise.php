@@ -13,8 +13,7 @@ class Exercise
 
         $url=$_SERVER['REQUEST_URI'];
         $method=$_SERVER['REQUEST_METHOD'];
-
-        if ($url === "/exercise/" && $method=='GET'){
+        if (($url === "/exercise/" || "/exercise/pageno") && $method=='GET'){
            $controller=new Customer();
             $controller->index();
         }
