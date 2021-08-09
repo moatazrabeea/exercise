@@ -28,7 +28,7 @@ class Customers
 
         return $result;
     }
-    public static function getTotalPages($limit){
+    public static function getTotalPages(){
         $total_pages_sql = "SELECT COUNT(*) FROM Customer";
         $pdo = (new SQLiteConnection())->connect();
         $statement=$pdo->prepare($total_pages_sql);
@@ -41,7 +41,8 @@ class Customers
             return false .$e->getMessage();
         }
         $result = $statement->fetch();
-        $total_pages = ceil($result[0] / $limit);
-        return $total_pages;
+        //$total_pages = ceil($result[0] / $limit);
+        //return $total_pages;
+        return $result[0];
     }
 }
