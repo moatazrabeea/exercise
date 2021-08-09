@@ -3,6 +3,15 @@
 require ('./app/View/common/header.php');
 ?>
 <!-------------------------------------------------------------------------->
+<div class="container-fluid">
+    <?php if ($data['errors']) { foreach ($data['errors'] as $key => $value){?>
+        <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $value; ?>
+
+        </div>
+    <?php }?>
+    <?php } ?>
+</div>
+<!-------------------------------------------------------------------------->
 <div class="panel-body">
     <div class="well">
         <div class="row">
@@ -28,17 +37,7 @@ require ('./app/View/common/header.php');
     </div>
 </div>
           <!------------------------------------------------------------------>
-<div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown link
-    </a>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-    </div>
-</div>
 <table class="table table-dark table-striped table-condensed"">
     <thead>
     <tr>
@@ -74,18 +73,21 @@ require ('./app/View/common/header.php');
 
 <script type="text/javascript">
         $('#button-filter').on('click', function () {
-            var url = '/exercise';
+            var url = '/';
 
             var filter_name = $('input[name=\'filter_name\']').val();
 
             if (filter_name) {
-                url += '&filter_name=' + encodeURIComponent(filter_name);
+                url += '?filter_name=' + encodeURIComponent(filter_name);
             }
 
-            var filter_model = $('input[name=\'filter_phone\']').val();
+            var filter_phone = $('input[name=\'filter_phone\']').val();
 
-            if (filter_model) {
-                url += '&filter_model=' + encodeURIComponent(filter_model);
+            if (filter_phone && filter_name) {
+                url += '&filter_phone=' + encodeURIComponent(filter_phone);
+            }
+            if (filter_phone && !filter_name){
+                url += '?filter_phone=' + encodeURIComponent(filter_phone);
             }
             location = url;
         });

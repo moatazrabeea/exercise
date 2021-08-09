@@ -8,13 +8,35 @@ use App\SQLiteConnection;
 
 class Customers
 {
-    public static function getALL($start,$limit){
+    public static function getALL($data=array()){
 
-        if ($start < 0) {
-            $start = 0;
-        }
         $pdo = (new SQLiteConnection())->connect();
-        $statement=$pdo->prepare("SELECT * FROM Customer LIMIT ".(int)$start." ,".(int)$limit);
+
+        $sql="SELECT * FROM Customer";
+
+        if (!empty($data['filter_name'])) {
+            $sql .= " WHERE Customer.name LIKE '" .$data['filter_name'] . "%'";
+                 if (!empty($data['filter_phone'])) {
+                $sql .= " AND Customer.phone LIKE '" .$data['filter_phone'] . "%'";
+                   }
+        }
+        elseif (!empty($data['filter_phone'])){
+            $sql .= " WHERE Customer.phone LIKE '" .$data['filter_phone'] . "%'";
+        }
+
+
+        if (isset($data['start']) || isset($data['limit'])) {
+            if ($data['start'] < 0) {
+                $data['start'] = 0;
+            }
+
+            if ($data['limit'] < 1) {
+                $data['limit'] = 20;
+            }
+        }
+            $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+             // var_dump($sql);die();
+        $statement=$pdo->prepare($sql);
         try
         {
             $statement->execute();
@@ -26,7 +48,9 @@ class Customers
         
         $result = $statement->fetchAll();
 
+       // var_dump($result);die();
         return $result;
+
     }
     public static function getTotalPages(){
         $total_pages_sql = "SELECT COUNT(*) FROM Customer";
@@ -41,8 +65,6 @@ class Customers
             return false .$e->getMessage();
         }
         $result = $statement->fetch();
-        //$total_pages = ceil($result[0] / $limit);
-        //return $total_pages;
         return $result[0];
     }
 }

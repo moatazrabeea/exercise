@@ -11,34 +11,75 @@ use App\lib\Pagination;
 
 class Customer extends Controller
 {
+    private $error = array();
+
    public function index(){
 
-       //var_dump($_GET);die();
+          if ($_SERVER['REQUEST_METHOD'] === 'GET'){
+              $this->getcustomers();
+          }
 
-       $limit=Pagination::limit;
 
-       if (isset($_GET['pageno'])){
-           $pageNo=$_GET['pageno'];
+   }
+   public function getcustomers(){
+
+       $valid=true;
+
+       if (isset($_GET['filter_name']) || isset($_GET['filter_phone'])){
+           $valid=$this->validateRequest();
        }
-       if (isset($pageNo) && $pageNo > 0){
-           $start=($_GET['pageno'] -1) * $limit;
-       }
-       else{
-           $pageNo=1;
-           $start=0;
-       }
-       $customers=Customers::getALL($start,$limit);
-       $data['customers']=$customers;
+       $data['errors'] = $this->error;
 
-       $totalPages=Customers::getTotalPages();
+if ($valid) {
+    $limit = Pagination::limit;
 
-       $pagination = new Pagination();
-       $pagination->total = $totalPages;
-       $pagination->page = $pageNo;
-       $data['pagination'] = $pagination->render();
+    if (isset($_GET['pageno'])) {
+        $pageNo = $_GET['pageno'];
+    }
+    if (isset($pageNo) && $pageNo > 0) {
+        $start = ($_GET['pageno'] - 1) * $limit;
+    } else {
+        $pageNo = 1;
+        $start = 0;
+    }
 
+    $filter_data = array(
+        'start' => $start,
+        'limit' => $limit,
+        'filter_name' => $_GET['filter_name'] ? $_GET['filter_name'] : null,
+        'filter_phone' => $_GET['filter_phone'] ? $_GET['filter_phone'] : null,
+    );
+
+    $customers = Customers::getALL($filter_data);
+    $data['customers'] = $customers;
+
+    $totalPages = Customers::getTotalPages();
+
+    $pagination = new Pagination();
+    $pagination->total = $totalPages;
+    $pagination->page = $pageNo;
+    $data['pagination'] = $pagination->render();
+}
        $view = new View('index');
        $view->assign('data', $data);
+   }
 
+   protected function validateRequest(){
+       if (isset($_GET['filter_name'])){
+
+           if($_GET['filter_name'] > 255 && preg_match("/^([a-zA-Z' ]+)$/",$_GET['filter_name'])){
+
+           }
+           else{
+               $this->error['name']='invalid filter name';
+                }
+       }
+       if (isset($_GET['filter_phone'])){
+          if (!preg_match("^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$",$_GET['filter_phone'])){
+               $this->error['phone']='invalid Phone Number';
+           }
+
+       }
+       return !$this->error;
    }
 }

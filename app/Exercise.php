@@ -15,13 +15,14 @@ class Exercise
         $method=$_SERVER['REQUEST_METHOD'];
         $parsed_url=parse_url($url);
         $route=$parsed_url['path'];
-       // var_dump($route);die();
+        //var_dump($route);die();
+//        var_dump($route);die();
 //        if (($url === "/exercise/" || "/exercise/pageno") && $method=='GET'){
 //           $controller=new Customer();
 //            $controller->index();
 //        }
 
-        if ($route === "/exercise/"){
+        if ($route === "/"){
             $controller=new Customer();
             $controller->index();
         }
