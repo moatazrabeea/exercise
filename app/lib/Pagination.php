@@ -38,18 +38,18 @@ class Pagination {
         $output = '<ul class="pagination">';
 
         if ($page > 1) {
-            $output .= '<li><a href="?pageno=1">' . $this->text_first . '</a></li>';
+            $output .= '<li title="first"><a href="?pageno=1">' . $this->text_first . '</a></li>';
 
             if ($page - 1 === 0) {
-                $output .= '<li><a href="?pageno=' . $this->page  . '">' . $this->text_prev . '</a></li>';
+                $output .= '<li title="prev"><a href="?pageno=' . $this->page  . '">' . $this->text_prev . '</a></li>';
             } else {
-                $output .= '<li><a href="?pageno=' .$this->page -1 . '">' . $this->text_prev . '</a></li>';
+                $output .= '<li title="prev"><a href="?pageno=' .$this->page -1 . '">' . $this->text_prev . '</a></li>';
             }
         }
 
         if ($page < $num_pages) {
-            $output .= '<li><a href="?pageno='. $this->page +1 .'">' . $this->text_next . '</a></li>';
-            $output .= '<li><a href="?pageno=' . $num_pages . '">' . $this->text_last . '</a></li>';
+            $output .= '<li title="next"><a href="?pageno='. $this->page +1 .'">' . $this->text_next . '</a></li>';
+            $output .= '<li title="last"><a href="?pageno=' . $num_pages . '">' . $this->text_last . '</a></li>';
         }
 
         $output .= '</ul>';

@@ -4,7 +4,10 @@
     <list default="true" id="163384d1-7f5f-49a6-a535-0fa6f79648e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/View/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/common/css/exercise.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/common/css/exercise.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/common/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/common/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/Pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/Pagination.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +36,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/View/common" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/View/common" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/View/common" />
       <recent name="$PROJECT_DIR$/app/controller" />
@@ -62,7 +68,7 @@
       <workItem from="1628296651731" duration="4414000" />
       <workItem from="1628411405036" duration="29488000" />
       <workItem from="1628502871524" duration="25495000" />
-      <workItem from="1628585612119" duration="10746000" />
+      <workItem from="1628585612119" duration="17379000" />
     </task>
     <servers />
   </component>

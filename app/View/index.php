@@ -56,18 +56,9 @@ require ('./app/View/common/header.php');
     <?php } ?>
     </tbody>
 </table>
-<!--<ul class="pagination">-->
-<!--    <li><a href="?pageno=1">First</a></li>-->
-<!--    <li class="--><?php //if($data['attachment']['pageNo'] <= 1){ echo 'disabled'; } ?><!--">-->
-<!--        <a href="--><?php //if($data['attachment']['pageNo'] <= 1){ echo '#'; } else { echo "?pageno=".($data['attachment']['pageNo'] - 1); } ?><!--">Prev</a>-->
-<!--    </li>-->
-<!--    <li class="--><?php //if($data['attachment']['pageNo'] >= $data['attachment']['totalPages']){ echo 'disabled'; } ?><!--">-->
-<!--        <a href="--><?php //if($data['attachment']['pageNo'] >= $data['attachment']['totalPages']){ echo '#'; } else { echo "?pageno=".($data['attachment']['pageNo'] + 1); } ?><!--">Next</a>-->
-<!--    </li>-->
-<!--    <li><a href="?pageno=--><?php //echo $data['attachment']['totalPages']; ?><!--">Last</a></li>-->
-<!--</ul>-->
 
-<div class="row">
+
+<div id="paging" class="row">
     <div class="col-sm-6 text-left"><?php echo $data['pagination']; ?></div>
 </div>
 

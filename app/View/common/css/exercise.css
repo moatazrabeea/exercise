@@ -1,8 +1,21 @@
 
 table {
-    display: none;
-    width: 50%;
+   width: 80% !important;
+    margin-left: 10%;
 }
-a{
-    margin-right: 20%;
+
+.panel-body{
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#paging{
+    margin-left: 50%;
+}
+li a {
+    padding-left: 10px;
+}
+#button-filter{
+    margin-top: 6%;
 }
