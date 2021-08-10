@@ -26,6 +26,9 @@ class Customer extends Controller
        $valid=true;
 
        if (isset($_GET['filter_name']) || isset($_GET['filter_phone'])){
+//           if (isset($_GET['filter_name'])){
+//
+//           }
            $valid=$this->validateRequest();
        }
        $data['errors'] = $this->error;
@@ -66,7 +69,7 @@ if ($valid) {
 
    protected function validateRequest(){
        if (isset($_GET['filter_name'])){
-
+           $_GET['filter_name']=trim($_GET['filter_name']);
            if($_GET['filter_name'] > 255 && preg_match("/^([a-zA-Z' ]+)$/",$_GET['filter_name'])){
 
            }
@@ -75,7 +78,9 @@ if ($valid) {
                 }
        }
        if (isset($_GET['filter_phone'])){
-          if (!preg_match("^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$",$_GET['filter_phone'])){
+           $_GET['filter_phone']=trim($_GET['filter_phone']);
+          //regular expression match numbers like (3digits)space[from 0 to 15 digits its value between 0 & 9]
+          if (!preg_match("/^\({1}[0-9]{3}\)\s[0-9]{0,15}$/",$_GET['filter_phone'])){
                $this->error['phone']='invalid Phone Number';
            }
 
