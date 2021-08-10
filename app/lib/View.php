@@ -12,18 +12,19 @@ private $render = FALSE;
 
 public function __construct($template)
 {
-    //try {
+    try {
         $file = './app/View/'.strtolower($template) . '.php';
-       //var_dump($file);die();
-        if (file_exists($file)) //{
+
+        if (file_exists($file)) {
             $this->render = $file;
-        //} else {
-            //throw new customException('Template ' . $template . ' not found!');
-        //}
-    //}
-    //catch (customException $e) {
-      //  echo $e->errorMessage();
-    //}
+        } else {
+            throw new \Exception('Template ' . $template . ' not found!');
+        }
+    }
+    catch (\Exception $e) {
+
+        echo $e->getMessage();
+    }
 }
 
 public function assign($variable, $value)

@@ -3,13 +3,11 @@
 
 namespace App\controller;
 
-use App\common\Document;
 use App\lib\View;
 use App\model\Customers;
-use App\lib\Controller;
 use App\lib\Pagination;
 
-class Customer extends Controller
+class Customer
 {
     private $error = array();
 
@@ -26,9 +24,7 @@ class Customer extends Controller
        $valid=true;
 
        if (isset($_GET['filter_name']) || isset($_GET['filter_phone'])){
-//           if (isset($_GET['filter_name'])){
-//
-//           }
+
            $valid=$this->validateRequest();
        }
        $data['errors'] = $this->error;
@@ -49,8 +45,8 @@ if ($valid) {
     $filter_data = array(
         'start' => $start,
         'limit' => $limit,
-        'filter_name' => $_GET['filter_name'] ? $_GET['filter_name'] : null,
-        'filter_phone' => $_GET['filter_phone'] ? $_GET['filter_phone'] : null,
+        'filter_name' => $_GET['filter_name'] ?? null,
+        'filter_phone' => $_GET['filter_phone'] ?? null,
     );
 
     $customers = Customers::getALL($filter_data);

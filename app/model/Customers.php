@@ -6,6 +6,7 @@ namespace App\model;
 
 use App\SQLiteConnection;
 
+
 class Customers
 {
     public static function getALL($data=array()){
@@ -35,7 +36,7 @@ class Customers
             }
         }
             $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-             // var_dump($sql);die();
+
         $statement=$pdo->prepare($sql);
         try
         {
@@ -48,7 +49,7 @@ class Customers
         
         $result = $statement->fetchAll();
 
-       // var_dump($result);die();
+
         return $result;
 
     }
@@ -60,11 +61,14 @@ class Customers
         {
             $statement->execute();
         }
+
         catch(PDOException $e)
         {
+
             return false .$e->getMessage();
         }
         $result = $statement->fetch();
         return $result[0];
     }
+
 }
